@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   validates :title, presence: true, length: { in: 1..40 }
   validates :link, presence: true, if: -> { body.blank? }
